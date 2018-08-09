@@ -3,6 +3,11 @@
     <h1>{{ msg }}</h1>
 	<h3>{{ msg2 }}</h3>
 	<h6> {{ msg3 }} </h6>
+	<div>
+		<h4> 
+			{{ msg4 }}
+		</h4>
+	</div>
   </div>
 </template>
 
@@ -10,10 +15,13 @@
 export default {
   name: 'HelloWorld',
   data () {
-    return {
-      msg: 'Anton says Hi',
-	  msg2: "some real Vue JS testing is going on around here",
-	  msg3: "hahahah just kidding!"
+	  	let msg = 'Anton says Hi'
+		let msg4 = msg.length > 4 ? "Hey Anton is here!" : "Where is Anton?"
+		return {
+		msg,
+		msg2: "some real Vue JS testing is going on around here",
+		msg3: "hahahah just kidding!",
+		msg4
     }
   }
 }
