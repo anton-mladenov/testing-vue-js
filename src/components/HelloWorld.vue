@@ -8,6 +8,13 @@
 			{{ msg4 }}
 		</h4>
 	</div>
+	<div>
+		<ul>
+			<li v-for="q in users">
+				{{q.question}}: {{q.answer}}
+			</li>
+		</ul>
+	</div>
   </div>
 </template>
 
@@ -17,11 +24,17 @@ export default {
   data () {
 	  	let msg = 'Anton says Hi'
 		let msg4 = msg.length > 4 ? "Hey Anton is here!" : "Where is Anton?"
+		let users = [
+			{question: "what's up?", answer: "nothing much"},
+			{question: "what's up?", answer: "it's all good, man"},
+			{question: "what's up?", answer: "life is awesome, duuude!"}
+		]
 		return {
 		msg,
 		msg2: "some real Vue JS testing is going on around here",
 		msg3: "hahahah just kidding!",
-		msg4
+		msg4,
+		users
     }
   }
 }
